@@ -1,24 +1,18 @@
-# README
+# 環境構築手順
+```
+git clone https://github.com/kei-prog/rails-docker.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+cd rails-docker
 
-Things you may want to cover:
+docker compose up -d
 
-* Ruby version
+docker-compose run web rake db:create
 
-* System dependencies
+docker-compose run web rails db:migrate RAILS_ENV=development
 
-* Configuration
+docker-compose run web rails webpacker:install
 
-* Database creation
+# localhost:3000にアクセスできればOK
 
-* Database initialization
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
